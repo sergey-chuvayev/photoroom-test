@@ -32,9 +32,9 @@ export const FolderContent = () => {
 
   return (
     <div className="w-full h-full flex p-4">
-      {images ? (
+      {images && images.length > 0 ? (
         <div className="flex flex-col gap-5">
-          <h1 className="text-2xl font-bold">{DEFAULT_FOLDER.name}</h1>
+          <h1 className="text-2xl font-bold">{id}</h1>
           <div className="grid grid-cols-3 gap-4">
             {images.map((img) => (
               <Card

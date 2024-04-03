@@ -45,7 +45,7 @@ export const Create = () => {
         const result = await response.json();
         const base64Result = BASE64_IMAGE_HEADER + result.result_b64;
         setResult(base64Result);
-        saveImage(DEFAULT_FOLDER.id, base64Result)
+        saveImage(DEFAULT_FOLDER, base64Result)
       })
 
       .catch((error) => {
