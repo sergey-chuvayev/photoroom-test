@@ -1,7 +1,9 @@
 import { AddButton } from "@/components/AddButton/AddButton";
 import { ChangeEvent, useState } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import loadImage, { LoadImageResult } from "blueimp-load-image";
-import { API_KEY, API_URL, BASE64_IMAGE_HEADER } from "../constants";
+import { API_KEY, API_URL, BASE64_IMAGE_HEADER, DEFAULT_FOLDER } from "../constants";
+import localForage from "localforage";
 
 export const Create = () => {
   const [result, setResult] = useState<string | null>(null);
@@ -43,6 +45,7 @@ export const Create = () => {
         const result = await response.json();
         const base64Result = BASE64_IMAGE_HEADER + result.result_b64;
         setResult(base64Result);
+        saveImage(DEFAULT_FOLDER.id, base64Result)
       })
 
       .catch((error) => {
@@ -76,4 +79,15 @@ export const Create = () => {
       </main>
     </div>
   );
+};
+
+const saveImage = async (folderId: string, image: string) => {
+  try {
+    const imageId = uuidv4();
+    const existingImages = await localForage.getItem<{ id: string, data: string }[]>(folderId) || [];
+    existingImages.push({ id: imageId, data: image });
+    await localForage.setItem(folderId, existingImages);
+  } catch (err) {
+    console.error('Error saving image', err);
+  }
 };

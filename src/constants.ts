@@ -3,3 +3,7 @@ export const BASE64_IMAGE_HEADER = "data:image/png;base64,";
 export const API_KEY =
   import.meta.env.VITE_API_KEY ||
   "SET VITE_API_KEY environment variable to your API key";
+export const DEFAULT_FOLDER = {
+  id: "untitled",
+  name: "Untitled Folder",
+};

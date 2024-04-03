@@ -16,6 +16,8 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "@types/blueimp-load-image": "^5.16.6",
+    "@types/localforage": "^0.0.34",
+    "@types/uuid": "^9.0.8",
     "blueimp-load-image": "^5.16.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
@@ -30,7 +32,8 @@
     "resizable": "^1.2.1",
     "sort-by": "^1.2.0",
     "tailwind-merge": "^2.2.2",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",

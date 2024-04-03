@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import { Create } from "./pages/Create";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { FolderContent } from "./pages/FolderContent";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "create", element: <Create /> },
+      { path: "folder/:id", element: <FolderContent /> },
     ],
   },
 ]);
