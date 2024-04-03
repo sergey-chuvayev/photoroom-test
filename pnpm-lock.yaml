@@ -14,9 +14,18 @@ dependencies:
   '@radix-ui/react-dropdown-menu':
     specifier: ^2.0.6
     version: 2.0.6(@types/react-dom@18.2.23)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
+  '@radix-ui/react-separator':
+    specifier: ^1.0.3
+    version: 1.0.3(@types/react-dom@18.2.23)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.74)(react@18.2.0)
+  '@types/blueimp-load-image':
+    specifier: ^5.16.6
+    version: 5.16.6
+  blueimp-load-image:
+    specifier: ^5.16.0
+    version: 5.16.0
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -1118,6 +1127,27 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
+  /@radix-ui/react-separator@1.0.3(@types/react-dom@18.2.23)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-itYmTy/kokS21aiV5+Z56MZB54KrhPgn6eHDKkFeOLR34HMN2s8PaN47qZZAGnvupcjxHaFZnW4pQEh0BvvVuw==}
+    peerDependencies:
+      '@types/react': '*'
+      '@types/react-dom': '*'
+      react: ^16.8 || ^17.0 || ^18.0
+      react-dom: ^16.8 || ^17.0 || ^18.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      '@types/react-dom':
+        optional: true
+    dependencies:
+      '@babel/runtime': 7.24.1
+      '@radix-ui/react-primitive': 1.0.3(@types/react-dom@18.2.23)(@types/react@18.2.74)(react-dom@18.2.0)(react@18.2.0)
+      '@types/react': 18.2.74
+      '@types/react-dom': 18.2.23
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+    dev: false
+
   /@radix-ui/react-slot@1.0.2(@types/react@18.2.74)(react@18.2.0):
     resolution: {integrity: sha512-YeTpuq4deV+6DusvVUW4ivBgnkHwECUu0BiN43L5UCDFgdhsRUWAghhTF5MbvNTPzmiFOx90asDSUjWuCNapwg==}
     peerDependencies:
@@ -1380,6 +1410,10 @@ packages:
     dependencies:
       '@babel/types': 7.24.0
     dev: true
+
+  /@types/blueimp-load-image@5.16.6:
+    resolution: {integrity: sha512-e7s6CdDCUoBQdCe62Q6OS+DF68M8+ABxCEMh2Isjt4Fl3xuddljCHMN8mak48AMSVGGwUUtNRaZbkzgL5PEWew==}
+    dev: false
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1669,6 +1703,10 @@ packages:
   /binary-extensions@2.3.0:
     resolution: {integrity: sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==}
     engines: {node: '>=8'}
+
+  /blueimp-load-image@5.16.0:
+    resolution: {integrity: sha512-3DUSVdOtlfNRk7moRZuTwDmA3NnG8KIJuLcq3c0J7/BIr6X3Vb/EpX3kUH1joxUhmoVF4uCpDfz7wHkz8pQajA==}
+    dev: false
 
   /brace-expansion@1.1.11:
     resolution: {integrity: sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==}
