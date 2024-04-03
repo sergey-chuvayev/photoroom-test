@@ -1,30 +1,32 @@
-# React + TypeScript + Vite
+# Image Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
 
-Currently, two official plugins are available:
+This application allows users to upload images, remove backgrounds using the PhotoRoom API, and organize these images into folders. Designed as part of the technical assignment for the Web Engineer position.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- **Image Upload**: Users can upload images from their computer.
+- **Background Removal**: Automatically removes the background from uploaded images using the PhotoRoom API.
+- **Image Organization**: Users can create folders and move images between them.
+- **Persistence**: Images and folders are persisted locally, ensuring data is retained across sessions.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Getting Started
 
-- Configure the top-level `parserOptions` property like this:
+### Installation
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clone the repository to your local machine:
+2. Install the dependencies:
+   ```bash
+   pnpm install
+   ```
+3. Start the development server:
+   ```bash
+   VITE_API_KEY="your_api_key" pnpm run dev
+   ```
+4. Open the application in your browser:
+   ```
+   Run the application on your browser.
+   The root route is http://localhost:5173/create
+   ```
+5. Start uploading images and organizing them!
