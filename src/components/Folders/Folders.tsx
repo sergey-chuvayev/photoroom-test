@@ -13,8 +13,13 @@ export const Folders = () => {
 
   const createFolder = async (name: string) => {
     try {
-      await localforage.setItem(name, []);
-      setFolders((prevFolders) => [...prevFolders, name]);
+      const existingFolders = await localforage.keys();
+      if (existingFolders.includes(name)) {
+        alert("A folder with this name already exists");
+      } else {
+        await localforage.setItem(name, []);
+        setFolders((prevFolders) => [...prevFolders, name]);
+      }
     } catch (err) {
       console.error("Error creating folder", err);
     }
@@ -44,10 +49,6 @@ export const Folders = () => {
           to={`/folder/${DEFAULT_FOLDER}`}
           className="w-full justify-start"
         >
-          {/* TODO: when I add a new image, I create a new folder, however I already render the default folder here. I need to find a way to either update the state here or predefine the default folder at the start of the app */}
-          <Button className="w-full justify-start" variant="ghost">
-            {DEFAULT_FOLDER}
-          </Button>
           {folders.map((folder) => (
             <NavLink
               key={folder}

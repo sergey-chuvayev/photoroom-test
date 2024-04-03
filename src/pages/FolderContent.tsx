@@ -12,18 +12,18 @@ export const FolderContent = () => {
     return <div>Folder not found</div>;
   }
 
-  useEffect(() => {
-    const fetchImage = async () => {
-      try {
-        const imgs = await localForage.getItem<Image[]>(id);
-        setImages(imgs);
-      } catch (err) {
-        console.error("Error fetching image", err);
-      }
-    };
+  const fetchImage = async () => {
+    try {
+      const imgs = await localForage.getItem<Image[]>(id);
+      setImages(imgs);
+    } catch (err) {
+      console.error("Error fetching image", err);
+    }
+  };
 
+  useEffect(() => {
     fetchImage();
-  }, [id]);
+  }, [id, fetchImage]);
 
   return (
     <div className="w-full h-full flex p-4">
@@ -32,7 +32,7 @@ export const FolderContent = () => {
           <h1 className="text-2xl font-bold">{id}</h1>
           <div className="grid grid-cols-3 gap-4">
             {images.map((image) => (
-              <ImageThumbnail image={image} />
+              <ImageThumbnail onImageMoved={fetchImage} image={image} />
             ))}
           </div>
         </div>
